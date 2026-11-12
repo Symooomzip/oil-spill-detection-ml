@@ -170,7 +170,14 @@ The project uses the **Oil Spill Detection** dataset from Roboflow:
 - **Classes**: Oil spill regions
 - **Splits**: Train, Validation, Test
 
-Dataset is automatically downloaded when running the scripts.
+Dataset is downloaded automatically when running the scripts. This requires a free Roboflow API key, provided through the `ROBOFLOW_API_KEY` environment variable:
+
+```bash
+# Windows (PowerShell)
+$env:ROBOFLOW_API_KEY="your_key"
+# Linux / macOS
+export ROBOFLOW_API_KEY=your_key
+```
 
 ## 🏋️ Training
 

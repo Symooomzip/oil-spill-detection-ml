@@ -43,7 +43,10 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 from roboflow import Roboflow
 
-rf = Roboflow(api_key="RZuiak7Os5ymfcfXZflx")
+ROBOFLOW_API_KEY = os.environ.get("ROBOFLOW_API_KEY")
+if not ROBOFLOW_API_KEY:
+    raise SystemExit("Set the ROBOFLOW_API_KEY environment variable (free key from roboflow.com) to download the dataset.")
+rf = Roboflow(api_key=ROBOFLOW_API_KEY)
 project = rf.workspace("mon-ehjb6").project("oil-spill-detection-gajxc")
 version = project.version(1)
 dataset = version.download("coco")
